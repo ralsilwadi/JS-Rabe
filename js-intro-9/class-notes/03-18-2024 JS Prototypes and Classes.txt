@@ -1,0 +1,52 @@
+
+
+Prototype (before ES6) or classes (after ES6) are used to create templates from which we can create many objects (instances)
+
+1. Create a template - prototype using constructor function 
+
+function Product(name, price, quantity) {
+    // 2. assign the given data (local variables) to this keyword which refers to the current object
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity; 
+}
+
+3. Create template methods
+Product.prototype.sell = function (quantity) {
+    this.quantity -= quantity;
+}
+
+4. Create many objects or instances from your template
+const product1 = new Product('Remote', 10, 6);
+const product2 = new Product('Monitor', 100, 5);
+const product3 = new Product('Laptop', 1000, 3);
+const product4 = new Product('Phone', 500, 10);
+
+
+// AFTER ES6 - we do not use constructor prototype anymore
+class Car {
+    // create a constructor
+    constructor(year, make, model, price) {
+        this.year = year;
+        this.make = make;
+        this.model = model;
+        this.price = price;
+    }
+}
+
+// constructor function to create a prototype
+function Car(year, make, model, price) {
+    this.year = year;
+    this.make = make;
+    this.model = model;
+    this.price = price;
+}
+
+
+Class is a template or blueprint used to create many objects
+Object is an instance of a class 
+Constructor is a special method used to create objects from a class or prototype (used together with new keyword)
+Properties are also known as states, fields or instance variables and used to define the object information
+Functions are the methods of the objects or class 
+
+NOTE: new keyword is a reserved keyword used to create objects from a class or prototype
