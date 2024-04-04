@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 5px;
+        }
+        table {
+            border: solid;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            color: white;
+            background-color: black;
+            border: 2px solid;
+        }
+        td {
+            border: 2px solid;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Portfolio</h1>
+    <h2>About Me: </h2>
+    <p>Write a brief description here.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Major Heading 1</th>
+                <th>Major Heading 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Beginner</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Projects</h2>
+    <div style="border: solid; padding: 5px;">
+        <h3>Project Title 1</h3>
+        <p>Brief description of Project 1.</p>
+    </div>
+    <br>
+    <div style="border: solid; padding: 5px;">
+        <h3>Project Title 2</h3>
+        <p>Brief description of Project 2.</p>
+    </div>
+    <h2>Contact Me</h2>
+    <form>
+        <p>Name:</p>
+        <input type="text" placeholder="Your name">
+        <p>Email:</p>
+        <input type="text" placeholder="Your email">
+        <p>Message:</p>
+        <textarea placeholder="Your message"></textarea>
+        <p>Do you like my page?</p>
+        <label>Yes
+            <input type="radio" name="like" checked />
+        </label>
+        <label>No
+            <input type="radio" name="like" />
+        </label>
+        <br> <br>
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>
