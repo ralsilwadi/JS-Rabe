@@ -129,3 +129,33 @@ const fibonacciSeries2 = num => num === 1 ? 0 : num === 2 ? 1 : fibonacciSeries2
 
 console.log(fibonacciSeries2(9))
 
+console.log("\n============Task-8============\n");
+
+const findUniques = (arr1, arr2) => {
+    arr1 = arr1.filter(elem => !arr2.includes(elem))
+    arr2 = arr2.filter(elem => !arr1.includes(elem))
+    return [...new Set([...arr1,...arr2])]
+}
+
+console.log(findUniques([-1, -2], [1, 2]))
+
+console.log("\n============Task-9============\n");
+
+const isPowerOf3 = num => {
+    while (true) {
+        if (num === 1) return true
+        if ((num / 3) % 1 !== 0) return false
+        num /= 3
+    }
+}
+
+// const isPowerOf3 = num => {
+//     while (num > 1) {
+//         if (num % 3 !== 0) return false;
+//         num /= 3;
+//     }
+//     return num === 1;
+// };
+
+console.log(isPowerOf3(243))
+
