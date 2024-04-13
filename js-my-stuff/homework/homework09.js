@@ -132,6 +132,7 @@ console.log(fibonacciSeries2(9))
 console.log("\n============Task-8============\n");
 
 const findUniques = (arr1, arr2) => {
+    arr3
     arr1 = arr1.filter(elem => !arr2.includes(elem))
     arr2 = arr2.filter(elem => !arr1.includes(elem))
     return [...new Set([...arr1,...arr2])]
@@ -157,5 +158,5 @@ const isPowerOf3 = num => {
 //     return num === 1;
 // };
 
-console.log(isPowerOf3(243))
+console.log(isPowerOf3(12))
 
