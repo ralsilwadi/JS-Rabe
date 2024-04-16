@@ -86,14 +86,14 @@ console.log(doubleOrTriple([-1, 0, 1], true))
 console.log("\n============Task-7============\n");
 
 const splitString = (str, num) => {
-    if (str.length < num || str.length % num !== 0) return ''
-    let result = ''
-    for (let i in str) {
-        if ((Number(i) + 1) % num === 0) result += str[i] + ' ';
-        else result += str[i];
+    if (str.length % num !== 0) return '';
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+        result += str[i];
+        if ((i + 1) % num === 0) result += ' ';
     }
-    return result
-}
+    return result.trim(); 
+};
 
 console.log(splitString("JavaScript", 5))
 console.log(splitString("Java", 2))
