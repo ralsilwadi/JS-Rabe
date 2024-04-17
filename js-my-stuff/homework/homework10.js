@@ -62,7 +62,6 @@ const nthWord = (str, num) => {
     return num > str.length ? '' : str[num - 1]
 }
 
-
 console.log(nthWord("QA stands for Quality Assurance", 4))
 console.log(nthWord("", 1))
 
