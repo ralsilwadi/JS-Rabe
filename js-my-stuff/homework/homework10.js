@@ -21,23 +21,27 @@ console.log("\n============Task-2============\n");
 const calculateTotalPrice2 = (order) => {
     let total = 0;
     const menu = {
-        apple: 2.00,
+        apple: 2.0,
         orange: 3.29,
         mango: 4.99,
-        pineapple: 5.25
+        pineapple: 5.25,
     };
     for (const item in order) {
-        if (item == "apple") {
-            for (let appleCount = 1; appleCount <= order[item]; appleCount++) {
-                if (appleCount % 2 === 0) total += menu[item] / 2
-                else total += menu[item]
+        let price = menu[item]
+        let amount =  order[item]
+        if (item === 'apple') {
+            for (let i = 1; i <= amount; i++) {
+                if(i % 2  === 0) total += (price/2)
+                else total += price 
             }
-        } else if (item == "mango") {
-            for (let mangoCount = 1; mangoCount <= order[item]; mangoCount++) {
-                if (mangoCount % 4 === 0)  total += 0
-                else total += menu[item]
+        }
+        else if (item === 'mango') {
+            for (let i = 1; i <= amount; i++) {
+                if(i % 4  === 0) total += 0
+                else total += price
             }
-        } else total += menu[item] * order[item];
+        }
+        else total += price * amount
     }
     return total.toFixed(2);
 };
@@ -49,7 +53,15 @@ console.log(calculateTotalPrice2({ apple: 4, pineapple: 1, orange: 1, mango:3 })
 
 console.log("\n============Task-3============\n");
 
-const nthWord = (str, num) => str.split(' ').filter((elem, index) => index === (num - 1)).join()
+// const nthWord = (str, num) => str.split(' ').filter((elem, index) => index === (num - 1))[0]
+
+// const nthWord = (str, num) => num > str.split(' ').length ? '' : str.split(' ')[num - 1]
+
+const nthWord = (str, num) => {
+    str = str.split(' ')
+    return num > str.length ? '' : str[num - 1]
+}
+
 
 console.log(nthWord("QA stands for Quality Assurance", 4))
 console.log(nthWord("", 1))
@@ -96,7 +108,7 @@ const splitString = (str, num) => {
 };
 
 console.log(splitString("JavaScript", 5))
-console.log(splitString("Java", 2))
+console.log(splitString("Javava", 2))
 console.log(splitString("Automation", 3))
 console.log(splitString("Hello", 6))
 console.log(splitString("12", 1) )
