@@ -96,7 +96,7 @@ console.log(doubleOrTriple([-1, 0, 1], true))
 
 console.log("\n============Task-7============\n");
 
-const splitString = (str, num) => {
+const splitString2 = (str, num) => {
     if (str.length % num !== 0) return '';
     let result = '';
     for (let i = 0; i < str.length; i++) {
@@ -106,9 +106,17 @@ const splitString = (str, num) => {
     return result.trim(); 
 };
 
+const splitString = (str, n) => {
+    if(n > str.length || str.length % n !== 0) return '';
+    return str.slice(0, n) + ' ' + str.slice(n);
+}
+
 console.log(splitString("JavaScript", 5))
 console.log(splitString("Javava", 2))
 console.log(splitString("Automation", 3))
 console.log(splitString("Hello", 6))
 console.log(splitString("12", 1) )
+
+
+
 
