@@ -115,8 +115,10 @@ console.log(count([1, 2, 3, 4, -4], true) )
 
 console.log("\n============Task-7============\n");
 
-const sumDigitsDouble = str => str.split('').reduce((sum, elem) elem )
-
+const sumDigitsDouble = str => {
+  const result = str.split('').reduce((sum, elem) => elem >= '0' && elem <= '9' ? sum + Number(elem) : sum, 0) * 2
+  return result !== 0 ? result : -1
+}
 console.log(sumDigitsDouble("Javascript") )
 console.log(sumDigitsDouble("23abc45")  )
 console.log(sumDigitsDouble("Hi-23") )
