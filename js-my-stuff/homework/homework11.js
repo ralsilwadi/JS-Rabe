@@ -69,7 +69,6 @@ const canFormString = (str1, str2) => {
   const freqStr2 = freqChart(str2);
 
   for (const char in freqStr2) {
-    if (char === ' ') continue
     if (freqStr2[char] > (freqStr1[char] || 0)) return false
   }
   return true;
