@@ -1,4 +1,3 @@
-
 /* Task-1
 Write a function named countVC() which takes a string argument and returns an object with the count of vowels and consonants.
 countVC("Hello")​             		    -> {vowels: 2, consonants: 3}
@@ -7,25 +6,24 @@ countVC("123AbC")​                  	-> {vowels: 1, consonants: 2}
 countVC("123!@#xyz")​                	-> {vowels: 0, consonants: 3}
 countVC("")​                         	-> {vowels: 0, consonants: 0}
 */
-console.log('\n============Task-1============');
+console.log("\n============Task-1============");
 
-const countVC = str => {
-  str = str.toLowerCase()
- let counts = {vowels: 0, consonants: 0}
+const countVC = (str) => {
+  str = str.toLowerCase();
+  let counts = { vowels: 0, consonants: 0 };
   for (let char of str) {
-    if (char >= 'a' && char <= 'z') {
-      if ('aeiou'.includes(char)) counts.vowels++
-      else counts.consonants++
+    if (char >= "a" && char <= "z") {
+      if ("aeiou".includes(char)) counts.vowels++;
+      else counts.consonants++;
     }
   }
-return counts
-}
-console.log(countVC("Hello"))
-console.log(countVC("Programming"))
-console.log(countVC("123AbC"))
-console.log(countVC("123!@#xyz"))
-console.log(countVC(""))
-
+  return counts;
+};
+console.log(countVC("Hello"));
+console.log(countVC("Programming"));
+console.log(countVC("123AbC"));
+console.log(countVC("123!@#xyz"));
+console.log(countVC(""));
 
 /* Task-2
 Write a function named countChars() which takes a string argument and returns an object with the count of letters, numbers, and specials.
@@ -37,31 +35,30 @@ countChars("0987654321")​             	     -> {numbers: 10}
 countChars("     ")​                         -> {}
 countChars("")​                              -> {}
 */
-console.log('\n============Task-2============');
+console.log("\n============Task-2============");
 
-const countChars = str => {
-  str = str.toLowerCase()
-  let result = {letters: 0, numbers: 0, specials: 0}
-   for (const char of str) {
-    if (char === ' ') continue
-    if (char >= 'a' && char <= 'z') result.letters++ 
-    else if (char >= '0' && char <= '9') result.numbers++
-    else result.specials++
-   }
+const countChars = (str) => {
+  str = str.toLowerCase();
+  let result = { letters: 0, numbers: 0, specials: 0 };
+  for (const char of str) {
+    if (char === " ") continue;
+    if (char >= "a" && char <= "z") result.letters++;
+    else if (char >= "0" && char <= "9") result.numbers++;
+    else result.specials++;
+  }
 
-   for (let elem in result) {
+  for (let elem in result) {
     if (result[elem] === 0) delete result[elem];
-   }
+  }
 
- return result
-}
-console.log(countChars("Hello"))
-console.log(countChars("Programming 123"))
-console.log(countChars("123AbC!@#"))
-console.log(countChars("0987654321"))
-console.log(countChars("     "))
-console.log(countChars(""))
-
+  return result;
+};
+console.log(countChars("Hello"));
+console.log(countChars("Programming 123"));
+console.log(countChars("123AbC!@#"));
+console.log(countChars("0987654321"));
+console.log(countChars("     "));
+console.log(countChars(""));
 
 /* Task-3
 Write a function named maxOccurrences() which takes a string argument and returns 
@@ -76,37 +73,39 @@ maxOccurrences("      ")   ​ 	     -> ""
 maxOccurrences("")   		          -> ""
 
 */
-console.log('\n============Task-3============');
+console.log("\n============Task-3============");
 const freqChart = (str) => {
-  return str.toLowerCase().split('').filter(elem => elem !== ' ').reduce((obj, char) => {
+  return str
+    .toLowerCase()
+    .split("")
+    .filter((elem) => elem !== " ")
+    .reduce((obj, char) => {
       obj[char] = (obj[char] || 0) + 1;
       return obj;
-  }, {});
-  
-}
-const maxOccurrences = str => {
-  const freq = freqChart(str) 
+    }, {});
+};
+const maxOccurrences = (str) => {
+  const freq = freqChart(str);
   let max = 0;
-  let result
+  let result;
   for (const key in freq) {
     if (freq[key] > max) {
       max = freq[key];
-      result = key
+      result = key;
     }
   }
 
-  return result || '';
-}
+  return result || "";
+};
 
+console.log(maxOccurrences("Hello"));
+console.log(maxOccurrences("Occurrences"));
+console.log(maxOccurrences("    ab    "));
+console.log(maxOccurrences("12   3   21"));
+console.log(maxOccurrences("      "));
+console.log(maxOccurrences(""));
 
-console.log(maxOccurrences("Hello"))
-console.log(maxOccurrences("Occurrences"))
-console.log(maxOccurrences("    ab    "))
-console.log(maxOccurrences("12   3   21"))
-console.log(maxOccurrences("      "))
-console.log(maxOccurrences(""))
-
-
+console.log("\n============Task-4============");
 /* Task-4
 console.log('\n============Task-4============');
 Write a function named starOut() which takes a string argument and returns 
@@ -121,6 +120,24 @@ starOut("***")   	    -> ""
 starOut("   ")   ​ 	   -> "   "
 starOut("")   	      -> ""
 */
+
+function starOut(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== "*" && str[i - 1] !== "*" && str[i + 1] !== "*") {
+      result += str[i];
+    }
+  }
+  return result;
+}
+
+console.log(starOut("ab*cd")); // "ad"
+console.log(starOut("ab**cd")); // "ad"
+console.log(starOut("xm*sm*sy")); // "xy"
+console.log(starOut("abc")); // "abc"
+console.log(starOut("***")); // ""
+console.log(starOut("   ")); // "   "
+console.log(starOut("")); // ""
 
 /* Task-5
 console.log('\n============Task-5============');
@@ -142,3 +159,29 @@ romanToInt("MMM") 		          -> 3000
 romanToInt("MMMDCCCLXXXVIII")  	-> 3888
 romanToInt("MDCLXVI")  	        ​-> 1666
 */
+
+const romanToInt = (str) => {
+  const numerals = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  str = str.split('');
+  let result = 0
+  str.forEach((elem, index) => {
+    if (numerals[elem] < numerals[str[index+1]]) result -= numerals[elem] 
+    else result += numerals[elem]
+  });
+  return result
+};
+
+console.log(romanToInt("III"));    // Output: 3
+console.log(romanToInt("IV"));     // Output: 4
+console.log(romanToInt("IX"));     // Output: 9
+console.log(romanToInt("LVIII"));  // Output: 58
+console.log(romanToInt("MMMDCCCLXXXVIII"));// Output: 3888
