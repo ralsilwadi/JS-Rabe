@@ -180,8 +180,4 @@ const romanToInt = (str) => {
   return result
 };
 
-console.log(romanToInt("III"));    // Output: 3
-console.log(romanToInt("IV"));     // Output: 4
-console.log(romanToInt("IX"));     // Output: 9
-console.log(romanToInt("LVIII"));  // Output: 58
-console.log(romanToInt("MMMDCCCLXXXVIII"));// Output: 3888
+console.log(romanToInt("MMMDCCCLXXXVIII")); // 3888
