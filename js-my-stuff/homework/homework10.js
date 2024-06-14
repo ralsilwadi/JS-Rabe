@@ -74,11 +74,11 @@ console.log(isArmstrong(1634))
 
 console.log("\n============Task-5============\n");
 
-const reverseNumber = num => {
+const reverseNumber = num => { //
     let revNum = 0
     while (num > 0) {
         const digit = num % 10
-        revNum = (revNum*10) + digit
+        revNum = (revNum * 10) + digit
         num = Math.floor(num / 10)
     }
     return revNum
