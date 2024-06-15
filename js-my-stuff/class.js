@@ -86,4 +86,49 @@ const findSumNumbers = str => {
   return result.reduce((sum, elem) => sum + Number(elem) , 0)
 }
 
-const 
+const isPowerOf3 = num => {
+  for (let i = 1; i <= num; i*=3) {
+    if (num === i) return true
+  }
+  return false
+}
+
+const fibonacciSeries1 = num => {
+  let result = [0, 1]
+  for (i = 2; i < num; i++) {
+    result.push(result[i - 1] + result[i - 2])
+  }
+  return result
+}
+
+const fibonacciSeries2 = num => {
+  let result = [0, 1]
+  for (i = 2; i < num; i++) {
+    result.push(result[i - 1] + result[i - 2])
+  }
+  return result[result.length - 1]
+}
+
+const findUniques = (arr1, arr2) => [...new Set([...arr1, ...arr2])].filter((elem) => !(arr1.includes(elem) && arr2.includes(elem)))
+
+const reverseNumber = num => {
+  let revNum = 0
+  while (num > 0) {
+    const digit = num % 10
+    revNum = (revNum * 10) + digit
+    num = Math.floor(num / 10) 
+  }
+  return revNum
+}
+
+const isArmstrong = num => num === (num.toString().split('').reduce((arms, elem,_,arr) => arms + elem**arr.length , 0))
+
+console.log(isArmstrong(153))
+console.log(isArmstrong(1634))
+console.log(isArmstrong(10))
+
+const freqChart = str => str.toLowerCase().replace(' ', '').split('').reduce((chart, elem) => (chart[elem] || 0) + 1 , {})
+
+console.log(freqChart('hello'))
+
+// const isAnagram = (str1, str2)
