@@ -41,6 +41,8 @@ const reverse = str => str.split('').reverse().join('');
 
 console.log("\n============Task-6============\n");
 
-const reverseWords = str => str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+const reverseWords = str => str.split(' ').map(word => reverse(word)).join(' ');
+
+console.log(reverseWords('hello 123 321'))
 
 
